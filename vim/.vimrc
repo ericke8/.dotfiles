@@ -29,6 +29,7 @@ set nowrap                      " No line wrapping!
 set noerrorbells                " Turn off error bells (screen flashing).
 set cursorline			" Show current line
 set showmode                    " Show curr mode (Insert, Replace, Visual, etc)
+set belloff=all                 " Disables visual bell screen flash
 
 if exists( "+colorcolumn" )
     set colorcolumn=80      " set a colorcolumn if possible
