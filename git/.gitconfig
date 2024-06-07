@@ -2,6 +2,9 @@
 	email = keric.yi@gmail.com
 	name = Eric Ke
 
+[core]
+	autocrlf = input
+
 [pull]
 	ff = only
 
