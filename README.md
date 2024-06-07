@@ -7,7 +7,7 @@ $ sudo apt-get install stow
 
 ### Usage
 ```shell
-$ git clone git@github.com:ericke8/.dotfiles.git ~/.dotfiles
+$ git clone https://github.com/ericke8/.dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles
 $ stow vim git bash
 ```
