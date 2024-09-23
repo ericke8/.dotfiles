@@ -10,8 +10,17 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth:erasedups
 
+# ignore ls, bg, fg, and history commands from history
+HISTIGNORE='ls:bg:fg:history'
+
 # put date with history in format given (YYYY-MM-D HH:MM:SS)
 HISTTIMEFORMAT='%F %T '
+
+# after each command, append to the history file
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a"
+
+# force commands that entered on more than one line to be adjusted to fit on only one 
+shopt -s cmdhist
 
 # append to the history file, don't overwrite it
 shopt -s histappend
