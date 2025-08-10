@@ -21,7 +21,7 @@ dotfiles config --local status.showUntrackedFiles no
 Without rsync
 ```
 git clone --separate-git-dir=$HOME/.dotfiles https://github.com/ericke8/.dotfiles.git $HOME/dotfiles-tmp
-rm $HOME/.git
+rm $HOME/dotfiles-tmp/.git
 cp -irv $HOME/dotfiles-tmp/. $HOME/
 rm --recursive $HOME/dotfiles-tmp/
 alias dotfiles='git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
