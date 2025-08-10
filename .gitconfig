@@ -1,0 +1,50 @@
+[core]
+	# checkout as is, convert to LF (Unix) on commit
+	autocrlf = input
+
+[pull]
+	# fastforward only
+	ff = only
+
+[fetch]
+	# prune deleted remote branches and tags
+	prune = true
+	pruneTags = true
+
+[init]
+	# setup default branch as main
+	defaultBranch = main
+
+[column]
+	# enable column layout
+    ui = auto
+
+[branch]
+	# sort branches by most recent commit date
+	sort = -committerdate
+
+[tag]
+	# sort tags by number order instead of lexicographic order
+	sort = version:refname
+
+[diff]
+	# use better algo for diff
+	algorithm = histogram
+	# different color for moved code
+	colorMoved = default
+	# ignore indentation changes for moved code highlighting
+	colorMovedWS = allow-indentation-change
+	# detect file rename
+	renames = true
+
+[rerere]
+	# reuse recovered resolution for merge conflicts
+	enabled = true
+
+[merge]
+	# better merge conflict style
+	conflictstyle = zdiff3
+
+[log]
+	# use graph for log
+	graph = true
