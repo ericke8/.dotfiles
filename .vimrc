@@ -1,5 +1,4 @@
 " ~/.vimrc
-" Eric Ke
 
 " Usage Settings
 set showcmd             	" Show the cmd being typed in the left hand corner
