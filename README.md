@@ -1,13 +1,16 @@
 # .dotfiles
 
-## Setup
+## Description
+Setup `$HOME/.dotfiles/` as a bare repo and make `$HOME` the git work-tree. Retrieve and update dotfiles as a git repo.
+
+## Creating This Repo
 ```
 git init --bare "$HOME/.dotfiles"
 alias dotfiles='git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
 dotfiles config --local status.showUntrackedFiles no
 ```
 
-## Replication
+## Setting Up a New Machine
 Destructive! Make sure to backup existing dotfiles first!
 
 ```
@@ -30,6 +33,7 @@ dotfiles config --local status.showUntrackedFiles no
 
 ## Usage
 ```
+cd $HOME
 dotfiles status
 dotfiles add ~/.bashrc
 dotfiles commit -m 'Update bashrc'
