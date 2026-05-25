@@ -124,3 +124,32 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# platform specific config
+case "$(uname -s)" in
+  # Unix
+  Linux*|Darwin*)
+    # mise
+    if command -v mise &>/dev/null; then
+      # default mise activation, includes WSL
+      eval "$(mise activate bash)"
+    fi
+    
+    ;;
+
+  # Windows
+  MINGW*|MSYS*|CYGWIN*)
+    # mise
+    if command -v mise &>/dev/null; then
+      _mise_script="$(mise activate bash)"
+
+      # patch activation to inject cygpath to convert from Windows to unix paths for MSYS2/MinGW
+      _fixed_mise_script=$(
+      printf '%s\n' "$_mise_script" |
+      sed -e 's|eval "\$(mise hook-env .*)"|&; export PATH="$(/usr/bin/cygpath -u -p \"$PATH\")";|' \
+          -e 's|eval "\$(command "\$__MISE_EXE" "\$command" "\$@")"|&; export PATH="$(/usr/bin/cygpath -u -p \"$PATH\")";|'
+      )
+      eval "$_fixed_mise_script"
+    fi
+    ;;
+esac
