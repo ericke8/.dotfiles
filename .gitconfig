@@ -1,3 +1,7 @@
+[user]
+	name = Eric Ke
+	email = 26385966+ericke8@users.noreply.github.com
+	
 [core]
 	# checkout as is, convert to LF (Unix) on commit
 	autocrlf = input
